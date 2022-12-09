@@ -18,6 +18,14 @@ class MainActivity : AppCompatActivity() {
         var PowrotView = findViewById<TextView>(R.id.textViewPowrot);
 
         var data = arrayListOf<Int>(0,0,0)
+        kalendarz.setOnDateChangeListener { calendarView, i, i2, i3 ->
+            data[0] = i
+            data[1] = i2
+            data[2] = i3
+        }
+
+        kalendarz.minDate = kalendarz.date
+        kalendarz.maxDate = kalendarz.date + (8460000 * 730)
 
     }
 }
